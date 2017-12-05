@@ -40,7 +40,7 @@ export default class CesiumComponents extends Component {
                         <Cesium2D viewer={this.props.viewer}/>
                     </div>
                     <div className='zoom-terrain'>
-                        <CesiumZoom />
+                        <CesiumZoom viewer={this.props.viewer}/>
                         <CesiumTerrain />
                     </div>
                     <div className='show-hot-point'>
