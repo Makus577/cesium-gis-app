@@ -1,0 +1,354 @@
+{
+    "accessors": {
+        "accessor_21": {
+            "bufferView": "bufferView_29",
+            "byteOffset": 0,
+            "byteStride": 0,
+            "componentType": 5123,
+            "count": 31827,
+            "type": "SCALAR"
+        },
+        "accessor_23": {
+            "bufferView": "bufferView_30",
+            "byteOffset": 0,
+            "byteStride": 12,
+            "componentType": 5126,
+            "count": 31827,
+            "max": [
+                0.969043,
+                1.23294,
+                3.05415
+            ],
+            "min": [
+                -1.41354,
+                -1.34681,
+                -0.0335183
+            ],
+            "type": "VEC3"
+        },
+        "accessor_25": {
+            "bufferView": "bufferView_30",
+            "byteOffset": 381924,
+            "byteStride": 12,
+            "componentType": 5126,
+            "count": 31827,
+            "max": [
+                0.999705,
+                1,
+                0.999685
+            ],
+            "min": [
+                -1,
+                -0.999849,
+                -1
+            ],
+            "type": "VEC3"
+        },
+        "accessor_27": {
+            "bufferView": "bufferView_30",
+            "byteOffset": 763848,
+            "byteStride": 8,
+            "componentType": 5126,
+            "count": 31827,
+            "max": [
+                0.993034,
+                0.994285
+            ],
+            "min": [
+                0.003275,
+                0.00165898
+            ],
+            "type": "VEC2"
+        }
+    },
+    "animations": {},
+    "asset": {
+        "generator": "collada2gltf@11bf28f97f1b5380fbefacf862ce7c597873d368",
+        "premultipliedAlpha": true,
+        "profile": {
+            "api": "WebGL",
+            "version": "1.0.2"
+        },
+        "version": 1
+    },
+    "bufferViews": {
+        "bufferView_29": {
+            "buffer": "oc",
+            "byteLength": 63656,
+            "byteOffset": 0,
+            "target": 34963
+        },
+        "bufferView_30": {
+            "buffer": "oc",
+            "byteLength": 1018464,
+            "byteOffset": 63656,
+            "target": 34962
+        }
+    },
+    "buffers": {
+        "oc": {
+            "byteLength": 1082120,
+            "type": "arraybuffer",
+            "uri": "oc.bin"
+        }
+    },
+    "images": {
+        "Free-Converter_com-0_varus_base_tx_cm-60732144_png": {
+            "name": "Free-Converter_com-0_varus_base_tx_cm-60732144_png",
+            "uri": "images/0_Free-Converter.com-0_varus_base_tx_cm-60732144.png"
+        }
+    },
+    "materials": {
+        "Material__27": {
+            "name": "Material__27",
+            "technique": "technique1",
+            "values": {
+                "ambient": "texture_Free-Converter_com-0_varus_base_tx_cm-60732144_png",
+                "diffuse": "texture_Free-Converter_com-0_varus_base_tx_cm-60732144_png",
+                "emission": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "shininess": 10,
+                "specular": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            }
+        }
+    },
+    "meshes": {
+        "geom-mat_lambert1": {
+            "name": "mat_lambert1",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": "accessor_25",
+                        "POSITION": "accessor_23",
+                        "TEXCOORD_0": "accessor_27"
+                    },
+                    "indices": "accessor_21",
+                    "material": "Material__27",
+                    "mode": 4
+                }
+            ]
+        }
+    },
+    "nodes": {
+        "node-_3dxy": {
+            "children": [
+                "node-mat_lambert1"
+            ],
+            "matrix": [
+                0.0393701,
+                0,
+                0,
+                0,
+                0,
+                0.0393701,
+                0,
+                0,
+                0,
+                0,
+                0.0393701,
+                0,
+                3.99999e-09,
+                3.99999e-09,
+                0.0607808,
+                1
+            ],
+            "name": "_3dxy"
+        },
+        "node-mat_lambert1": {
+            "children": [],
+            "matrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0.222249,
+                0.0569379,
+                -1.51031,
+                1
+            ],
+            "meshes": [
+                "geom-mat_lambert1"
+            ],
+            "name": "mat_lambert1"
+        },
+        "node_0": {
+            "children": [],
+            "matrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "name": "EnvironmentAmbientLight"
+        },
+        "node_3": {
+            "children": [
+                "node_0",
+                "node-_3dxy"
+            ],
+            "matrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                -1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "name": "Y_UP_Transform"
+        }
+    },
+    "programs": {
+        "program_0": {
+            "attributes": [
+                "a_normal",
+                "a_position",
+                "a_texcoord0"
+            ],
+            "fragmentShader": "oc0FS",
+            "vertexShader": "oc0VS"
+        }
+    },
+    "samplers": {
+        "sampler_0": {
+            "magFilter": 9729,
+            "minFilter": 9729,
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    },
+    "scene": "defaultScene",
+    "scenes": {
+        "defaultScene": {
+            "nodes": [
+                "node_3"
+            ]
+        }
+    },
+    "shaders": {
+        "oc0FS": {
+            "type": 35632,
+            "uri": "oc0FS.glsl"
+        },
+        "oc0VS": {
+            "type": 35633,
+            "uri": "oc0VS.glsl"
+        }
+    },
+    "skins": {},
+    "techniques": {
+        "technique1": {
+            "attributes": {
+                "a_normal": "normal",
+                "a_position": "position",
+                "a_texcoord0": "texcoord0"
+            },
+            "parameters": {
+                "ambient": {
+                    "type": 35678
+                },
+                "diffuse": {
+                    "type": 35678
+                },
+                "emission": {
+                    "type": 35666
+                },
+                "modelViewMatrix": {
+                    "semantic": "MODELVIEW",
+                    "type": 35676
+                },
+                "normal": {
+                    "semantic": "NORMAL",
+                    "type": 35665
+                },
+                "normalMatrix": {
+                    "semantic": "MODELVIEWINVERSETRANSPOSE",
+                    "type": 35675
+                },
+                "position": {
+                    "semantic": "POSITION",
+                    "type": 35665
+                },
+                "projectionMatrix": {
+                    "semantic": "PROJECTION",
+                    "type": 35676
+                },
+                "shininess": {
+                    "type": 5126
+                },
+                "specular": {
+                    "type": 35666
+                },
+                "texcoord0": {
+                    "semantic": "TEXCOORD_0",
+                    "type": 35664
+                }
+            },
+            "program": "program_0",
+            "states": {
+                "enable": [
+                    2929,
+                    2884
+                ]
+            },
+            "uniforms": {
+                "u_ambient": "ambient",
+                "u_diffuse": "diffuse",
+                "u_emission": "emission",
+                "u_modelViewMatrix": "modelViewMatrix",
+                "u_normalMatrix": "normalMatrix",
+                "u_projectionMatrix": "projectionMatrix",
+                "u_shininess": "shininess",
+                "u_specular": "specular"
+            }
+        }
+    },
+    "textures": {
+        "texture_Free-Converter_com-0_varus_base_tx_cm-60732144_png": {
+            "format": 6408,
+            "internalFormat": 6408,
+            "sampler": "sampler_0",
+            "source": "Free-Converter_com-0_varus_base_tx_cm-60732144_png",
+            "target": 3553,
+            "type": 5121
+        }
+    }
+}

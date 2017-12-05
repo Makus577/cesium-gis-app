@@ -1,0 +1,30 @@
+.toolGroup {
+    position: relative;
+    width: 71px;
+    height: 47px;
+    border: 1px solid #000;
+    border-radius: 5px 0 0 5px;
+    background-color: #ffffff;
+}
+.toolBtn {
+    width: 71px;
+    height: 46px;
+    cursor: pointer;
+}
+.tools {
+    position: absolute;
+    border: 1px solid #000;
+    border-bottom: none;
+    border-radius: 5px;
+    display: none;
+}
+.tool {
+    width: 70px;
+    height: 70px;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+    background-color: #fff;
+}
+.toolGroup:hover .tools {
+    display: block;
+}

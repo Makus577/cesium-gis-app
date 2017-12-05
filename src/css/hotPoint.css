@@ -1,0 +1,39 @@
+.hot-points {
+    width: 1890px;
+    height: 140px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.gallery {
+    display: flex;
+    align-items: center;
+     width: 1890px;
+     height: 140px;
+}
+.imgPoints {
+    display: flex;
+    align-items: center;
+    width: 1800px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.imgs {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+.last, .next {
+    height: 21px;
+    width: 13px;
+    flex-shrink: 0;
+    margin: 0 16px;
+}
+
+.point-img {
+    flex-shrink: 0;
+    width: 160px;
+    height: 120px;
+    margin: 0 10px;
+    border: 1px  solid red;
+}

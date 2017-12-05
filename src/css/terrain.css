@@ -1,0 +1,6 @@
+.terrain {
+    border-top: none;
+    height: 50px;
+    /* border-bottom: 1px solid #000000; */
+    background-color: #ffffff;
+}

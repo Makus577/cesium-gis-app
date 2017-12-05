@@ -1,0 +1,22 @@
+.seo {
+    display: flex
+}
+.content {
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    height: 47px;
+    width: 266px;
+    border:1px solid #000000;
+    border-left: none;
+    border-right: none;
+    color:#6a6f77;
+
+    /* outline:0; */
+    outline:medium
+}
+.search {
+    width:71px;
+    height: 47px;
+    border: 1px solid #000000;
+    border-radius: 0 5px 5px 0;
+}
