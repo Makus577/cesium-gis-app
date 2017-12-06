@@ -1,6 +1,6 @@
 .terrain {
-    border-top: none;
     height: 50px;
-    /* border-bottom: 1px solid #000000; */
-    background-color: #ffffff;
+    background-image: url('../imgs/zoom.svg');
+    background-repeat: no-repeat;
+    background-position: 0 65.66%;
 }

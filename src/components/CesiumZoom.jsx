@@ -36,8 +36,8 @@ export default class CesiumZoom extends Component {
     render() {
         return (
             <div className='zoomInOut'>
-                <div className='zoomIn' onClick={this.zoomIn.bind(this)}>+</div>
-                <div className='zoomOut' onClick={this.zoomOut.bind(this)}>-</div>
+                <div className='zoomIn' onClick={this.zoomIn.bind(this)}></div>
+                <div className='zoomOut' onClick={this.zoomOut.bind(this)}></div>
             </div>
         )
     }

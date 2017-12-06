@@ -2,13 +2,10 @@
     position: relative;
     width: 71px;
     height: 47px;
-    border: 1px solid #000;
-    border-radius: 5px 0 0 5px;
-    background-color: #ffffff;
 }
 .toolBtn {
     width: 71px;
-    height: 46px;
+    height: 47px;
     cursor: pointer;
 }
 .tools {
@@ -21,10 +18,24 @@
 .tool {
     width: 70px;
     height: 70px;
-    border-bottom: 1px solid #000;
     cursor: pointer;
-    background-color: #fff;
 }
 .toolGroup:hover .tools {
     display: block;
+}
+.dis, .hei, .area, .more{
+    background-image: url('../imgs/tool.png');
+    background-repeat: no-repeat;
+}
+.dis {
+    background-position: 0 0;
+}
+.hei {
+    background-position: 0 33.33%;
+}
+.area {
+    background-position: 0 66.66%;
+}
+.more {
+    background-position: 0% 100%;
 }

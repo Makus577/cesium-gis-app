@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="202">
+    <defs>
+        <filter id="a">
+            <feFlood flood-color="#666" flood-opacity="1" result="floodOut"/>
+            <feComposite in="floodOut" in2="SourceGraphic" operator="atop" result="compOut"/>
+            <feBlend in="compOut" in2="SourceGraphic"/>
+        </filter>
+        <filter id="b">
+            <feFlood flood-color="#666" flood-opacity="1" result="floodOut"/>
+            <feComposite in="floodOut" in2="SourceGraphic" operator="atop" result="compOut"/>
+            <feBlend in="compOut" in2="SourceGraphic"/>
+        </filter>
+    </defs>
+    <path fill="#FFF" fill-rule="evenodd" d="M5 0h40a5 5 0 0 1 5 5v190a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V5a5 5 0 0 1 5-5z"/>
+    <path fill="#666" fill-rule="evenodd" d="M0 51v-1h50v1H0zM0 101v-1h50v1H0zM0 151v-1h50v1H0z"/>
+    <path fill="#AAA" fill-rule="evenodd" d="M12.493 71.734h25.011v5.772H12.493v-5.772zM27.79 37.187h-5.572v-9.632h-9.716v-5.524h9.716V12.4h5.572v9.631h9.714v5.524H27.79v9.632z"/>
+    <text x="7" y="132" fill="#AAA" font-family="Microsoft YaHei" font-size="18" font-weight="bold">
+        高程
+    </text>
+    <path fill="none" stroke="#FFF" stroke-width="4" d="M12.997 175.469L25.5 163l12.503 12.469" filter="url(#a)"/>
+    <path fill="none" stroke="#FFF" stroke-width="4" d="M12.997 175.469L25.5 163l12.503 12.469"/>
+    <path fill="none" stroke="#FFF" stroke-width="4" d="M12.997 183.228L25.5 170.759l12.503 12.469" filter="url(#b)"/>
+    <path fill="none" stroke="#FFF" stroke-width="4" d="M12.997 183.228L25.5 170.759l12.503 12.469"/>
+</svg>

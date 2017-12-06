@@ -1,15 +1,19 @@
 .hot-points {
     width: 1890px;
     height: 140px;
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     background-color: #ffffff;
+    z-index: 100;
 }
 .gallery {
     display: flex;
     align-items: center;
      width: 1890px;
      height: 140px;
+}
+.gallery img {
+    cursor: pointer;
 }
 .imgPoints {
     display: flex;
@@ -35,5 +39,5 @@
     width: 160px;
     height: 120px;
     margin: 0 10px;
-    border: 1px  solid red;
+    border: 1px solid #fff;
 }

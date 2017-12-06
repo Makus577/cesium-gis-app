@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../css/seo.css'
-
+import searchIcon from '../imgs/search.svg'
 export default class CesiumSeo extends Component {
     searchClick() {
         console.log(this.input.value)
@@ -9,7 +9,9 @@ export default class CesiumSeo extends Component {
         return (
             <div className='seo'>
                     <input type="text" className='content' placeholder='nihao' ref={(input)=> this.input = input}/>
-                    <button className='search' onClick={this.searchClick.bind(this)}>搜索</button>
+                    <div className='search' onClick={this.searchClick.bind(this)}>
+                        <img src={searchIcon} alt=""/>
+                </div>
             </div>
         )
     }

@@ -18,25 +18,23 @@
     bottom: 0px;
 }
 .transform {
-    bottom: 151px;
+    bottom: 121px;
 }
 .cesium-2d {
     position: absolute;
     right: 0;
-    bottom: 372px;
+    bottom: 252px;
 }
 .zoom-terrain {
     position: absolute;
     right: 0;
-    bottom: 210px;
-    border: 1px solid #000000;
-    border-bottom: none;
+    bottom: 91px;
     
 }
 .show-hot-point {
     position: absolute;
     right: 0;
-    bottom: 160px;
+    bottom: 41px;
     /* border-radius: 5px 5px 0 0; */
 }
 .hot-point {

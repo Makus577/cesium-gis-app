@@ -15,7 +15,7 @@ export default class CesiumComponents extends Component {
     constructor() {
         super()
         this.state = {
-            isShow: true
+            isShow: false
         }
     }
     handleShow(isShow) {
@@ -33,9 +33,9 @@ export default class CesiumComponents extends Component {
                     <CesiumSeo />
                 </div>
                 <div className='compass'>
-                    <CesiumCompass/>
+                    <CesiumCompass viewer={this.props.viewer}/>
                 </div>
-                <div className={'sh-Tools ' + (isShow ? '' :'transform')}>
+                <div className={'sh-Tools ' + (!isShow ? '' :'transform')}>
                     <div className='cesium-2d'>
                         <Cesium2D viewer={this.props.viewer}/>
                     </div>

@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import '../css/hotPoint.css'
+import icon1 from '../imgs/1.png'
+import icon2 from '../imgs/2.png'
+import icon3 from '../imgs/3.png'
+import next from '../imgs/next.png'
+import last from '../imgs/last.png'
+const arr = [icon1, icon2, icon3]
 export default class CesiumHotPoint extends Component {
     imgPointLast() {
         let marginLeft = this.imgs.style.marginLeft
@@ -32,14 +38,15 @@ export default class CesiumHotPoint extends Component {
         return (
             <div className='hot-points'>
                 <div className='gallery'>
-                    <div className='last' onClick={this.imgPointLast.bind(this)}>/</div>
+                    <div className='last' onClick={this.imgPointLast.bind(this)}>
+                        <img src={last} alt="" /></div>
                     <div className='imgPoints'>
                         <div className='imgs' ref={imgs => this.imgs = imgs}>
                             {
                                 imgPoints.map((imgPoint, index) => {
                                     return (
                                         <div className='point-img' key={index}>
-                                            {imgPoint}
+                                            <img src={arr[(index) % 3 ]} alt=""/>
                                         </div>
                                     )
                                 })
@@ -47,7 +54,7 @@ export default class CesiumHotPoint extends Component {
                         </div>
                     </div>
                     
-                    <div className='next' onClick={this.imgPointNext.bind(this)}>></div>
+                    <div className='next' onClick={this.imgPointNext.bind(this)}><img src={next} alt=""/></div>
                 </div>
             </div>
         )

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+    <path fill="#FFF" fill-rule="evenodd" d="M5 0h40a5 5 0 0 1 5 5v40a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5V5a5 5 0 0 1 5-5z"/>
+    <text x="12" y="33" fill="#999" font-family="Microsoft YaHei" font-size="20" font-weight="bold">
+        2D
+    </text>
+</svg>

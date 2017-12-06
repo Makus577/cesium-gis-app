@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SceneMode from 'cesium/Source/Scene/SceneMode'
 import SceneModePickerViewModel from 'cesium/Source/Widgets/SceneModePicker/SceneModePickerViewModel'
 import '../css/2d.css'
+import twoD from '../imgs/two-d.svg'
 export default class Cesium2D extends Component {
     changeSceneMode() {
         const viewer = this.props.viewer
@@ -18,7 +19,9 @@ export default class Cesium2D extends Component {
     render() {
         return (
             <div>
-                <div className='img-2d' onClick={this.changeSceneMode.bind(this)}>2D</div>
+                <div className='img-2d' onClick={this.changeSceneMode.bind(this)}>
+                    <img src={twoD} alt=""/>
+                </div>
             </div>
         )
     }
