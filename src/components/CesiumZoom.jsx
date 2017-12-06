@@ -6,7 +6,7 @@ export default class CesiumZoom extends Component {
         this._isInOut(4)
     }
     zoomOut() {
-        this._isInOut(-4)
+        this._isInOut(-3)
     }
     _isInOut(wheelZoomAmount) {
         const viewer = this.props.viewer
