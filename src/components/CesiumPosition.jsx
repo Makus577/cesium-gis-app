@@ -39,7 +39,6 @@ export default class CesiumPosition extends Component {
         } else {
             this.entity.label.show = false;
         }
-        console.log(this.entity.label.text)
     }
     _wheel(wheelment) {
         this.height = Math.ceil(this.viewer.camera.positionCartographic.height);

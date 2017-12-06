@@ -9,7 +9,6 @@ export default class ScreenSpaceEvent extends Component {
         const { viewer, ScreenSpaceEventType, handleAgru} = this.props
         var handler = new ScreenSpaceEventHandler(viewer.canvas);
         handler.setInputAction((arg) => { 
-            console.log(arg)
             handleAgru(arg)
         }, ScreenSpaceEventType);
         // (agruments) => { //关键词
