@@ -9,6 +9,7 @@ import CesiumTerrain from './components/CesiumTerrain'
 import CesiumShowHotP from './components/CesiumShowHotP'
 import CesiumHotPoint from './components/CesiumHotPoint'
 import CesiumPosition from './components/CesiumPosition'
+import CesiumInfoBox from './components/CesiumInfoBox'
 import './css/components.css'
 
 export default class CesiumComponents extends Component {
@@ -54,6 +55,7 @@ export default class CesiumComponents extends Component {
                 <div>
                     <CesiumPosition viewer={this.props.viewer}/>
                 </div>
+                <CesiumInfoBox viewer={this.props.viewer}/>
             </div>
         )
        
