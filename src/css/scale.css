@@ -1,0 +1,35 @@
+.distance-legend {
+    pointer-events: auto;
+    position: absolute;
+    border-radius: 15px;
+    background-color: rgba(47, 53, 60, .8);
+    padding-left: 5px;
+    padding-right: 5px;
+    left: 25px;
+    bottom: 8px;
+    height: 30px;
+    width: 125px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    box-sizing: content-box;
+    z-index: 99;
+}
+.distance-legend-label {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 30px;
+    color: #fff;
+    width: 125px;
+    text-align: center;
+}
+.distance-legend-scale-bar {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    position: absolute;
+    height: 10px;
+    top: 15px;
+    width: 50px;
+    left: 42.5px;
+}

@@ -10,8 +10,8 @@ import CesiumShowHotP from './components/CesiumShowHotP'
 import CesiumHotPoint from './components/CesiumHotPoint'
 import CesiumPosition from './components/CesiumPosition'
 import CesiumInfoBox from './components/CesiumInfoBox'
+import CesiumScale from './components/CesiumScale'
 import './css/components.css'
-
 export default class CesiumComponents extends Component {
     constructor() {
         super()
@@ -25,7 +25,6 @@ export default class CesiumComponents extends Component {
         })
     }
     render() {
-        console.log(this.props.viewer)
         const {isShow} = this.state
         return (
             <div className='component'>
@@ -54,6 +53,7 @@ export default class CesiumComponents extends Component {
                 </div>
                 <div>
                     <CesiumPosition viewer={this.props.viewer}/>
+                    <CesiumScale viewer={this.props.viewer}/>
                 </div>
                 <CesiumInfoBox viewer={this.props.viewer}/>
             </div>

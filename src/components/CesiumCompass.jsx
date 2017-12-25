@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../css/compass.css'
+import Camera from 'cesium/Source/Scene/Camera'
 import compass from '../imgs/compass.png'
 export default class CesiumCompass extends Component {
     //如何实现监听事件
@@ -22,10 +23,17 @@ export default class CesiumCompass extends Component {
     _transformRTo(r) {
         return r / Math.PI * 180 % 360
     }
+    handleClick() {
+        const { viewer } = this.props
+        const camera = viewer.camera
+        camera.flyHome(1);
+        // camera.flyTo({ 'destination': Camera.DEFAULT_VIEW_RECTANGLE, 'duration': 1 });
+    }
     render() {
         return (
             <div className='compass-img'>
-                <div><img src={compass} alt="" className='compass-img' ref={img => this.compass = img}/></div>
+                <div><img src={compass} alt="" className='compass-img' ref={img => this.compass = img} 
+                    onClick={this.handleClick.bind(this)}/></div>
             </div>
         )
     }

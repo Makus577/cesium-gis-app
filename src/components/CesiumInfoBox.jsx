@@ -80,12 +80,14 @@ export default class CesiumInfoBox extends Component {
     _show() {
         this.infobox.style.display = 'block'
     }
-
+    handleClick() {
+        this.infobox.style.display = 'none'
+    }
     render() {
         return (
             <div>
                 <div id="popup" className="ol-popup" ref={infobox => this.infobox = infobox}>
-                    <a href="#" id="popup-closer" className="ol-popup-closer"></a>
+                    <a href="#" onClick={this.handleClick.bind(this)} id="popup-closer" className="ol-popup-closer"></a>
                     <div id="popup-content">112</div>
                     <div className='selectImg'>
                         <svg xmlns="http://www.w3.org/2000/svg"width="31.5px" height="31.5px">

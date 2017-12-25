@@ -1,7 +1,7 @@
 .position-msg {
     display: flex;
     position: absolute;
-    left: 10px;
+        left: 172px;
     bottom: 10px;
     z-index: 99;
     color: #fff;
