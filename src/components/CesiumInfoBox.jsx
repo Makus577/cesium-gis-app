@@ -24,7 +24,6 @@ export default class CesiumInfoBox extends Component {
             let c = SceneTransforms.wgs84ToWindowCoordinates(viewer.scene, pick.id._position._value);
             removeHandler && removeHandler()
             var removeHandler = viewer.scene.postRender.addEventListener( () => {
-                console.log(pick.id._position._value)
                 var changedC = SceneTransforms.wgs84ToWindowCoordinates(viewer.scene, pick.id._position._value);
                 // If things moved, move the popUp too
                 if ((c.x !== changedC.x) || (c.y !== changedC.y)) {
@@ -62,7 +61,6 @@ export default class CesiumInfoBox extends Component {
         var x = c.x - (width) / 2;
         var y = c.y - (height) - 50;
         this.infobox.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)'
-        console.log('translate3d(' + x + 'px, ' + y + 'px, 0)')
         this._show();
     }
     _getStyle(ele) {
@@ -89,14 +87,14 @@ export default class CesiumInfoBox extends Component {
                 <div id="popup" className="ol-popup" ref={infobox => this.infobox = infobox}>
                     <a href="#" id="popup-closer" className="ol-popup-closer"></a>
                     <div id="popup-content">112</div>
-                    {/* <div className='selectImg'>
+                    <div className='selectImg'>
                         <svg xmlns="http://www.w3.org/2000/svg"width="31.5px" height="31.5px">
                             <path fillRule="evenodd" stroke="rgb(0, 90, 255)" strokeWidth="1px" strokeLinecap="butt" strokeLinejoin="miter" fill="none"
                                 d="M15.500,0.500 C23.784,0.500 30.500,7.216 30.500,15.500 C30.500,23.784 23.784,30.500 15.500,30.500 C7.216,30.500 0.500,23.784 0.500,15.500 C0.500,7.216 7.216,0.500 15.500,0.500 Z" />
                             <path fillRule="evenodd" fill="rgb(0, 90, 255)"
                                 d="M15.705,9.541 C19.110,9.541 21.870,12.301 21.870,15.705 C21.870,19.110 19.110,21.870 15.705,21.870 C12.301,21.870 9.541,19.110 9.541,15.705 C9.541,12.301 12.301,9.541 15.705,9.541 Z" />
                         </svg>
-                    </div> */}
+                    </div>
                 </div>
                 
                 <ScreenSpaceEvent viewer={this.props.viewer}

@@ -8,5 +8,6 @@ module.exports = {
     sceneModePicker: false,
     timeline: false,
     navigationHelpButton: false,
+    selectionIndicator: false,
     // scene3DOnly: true,
 }

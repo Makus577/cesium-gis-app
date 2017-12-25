@@ -3,4 +3,24 @@
     background-image: url('../imgs/zoom.svg');
     background-repeat: no-repeat;
     background-position: 0 65.66%;
+    position: relative;
+}
+.layers {
+    position: absolute;
+    display: flex;
+    right: 48px;
+    width: 525px;
+    padding: 10.3px 9px 8.7px;
+    background-color: #fff;
+    height: 99px;
+    top: 1px;
+}
+.layers img {
+    margin-right: 10.1px;
+}
+.layers img:last-child {
+    margin-right: 0;
+}
+.hiden {
+    display: none;
 }

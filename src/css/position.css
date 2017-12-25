@@ -1,0 +1,10 @@
+.position-msg {
+    display: flex;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 99;
+    color: #fff;
+}
+.position-msg .lon, .position-msg .lat {
+}

@@ -8,18 +8,13 @@ export default class CesiumCompass extends Component {
         var cesiumWidget = viewer.cesiumWidget;
         var camera = cesiumWidget.scene.camera;
         var lastCamera = camera;
-        console.log('camera movied');
         cesiumWidget.clock.onTick.addEventListener(() => {
             camera = cesiumWidget.scene.camera;
             if (!(camera.heading === lastCamera.heading) ||
                 !(camera.pitch === lastCamera.pitch) ||
                 !(camera.roll === lastCamera.roll)) {
-                console.log(this.compass.style.transform);
                 let rotate = this._transformRTo(camera.heading)
                 this.compass.style.transform = 'rotate('+rotate+'deg)'
-                // console.log('heading', rotate)  // 0
-                // console.log('pitch', this._transformRTo(camera.pitch)) // -90度
-                // console.log('roll', this._transformRTo(camera.roll)) // 0
                 lastCamera = camera;
             }
         });

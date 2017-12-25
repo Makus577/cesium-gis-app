@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import ScreenSpaceEvent from '../cesium/ScreenSpaceEvent'
 import ScreenSpaceEventType from 'cesium/Source/Core/ScreenSpaceEventType'
 import CesiumMath from 'cesium/Source/Core/Math'
-console.log(CesiumMath)
+import '../css/position.css'
 export default class CesiumPosition extends Component {
     constructor () {
         super()
         this.state = {
-            degree: '',
+            lon: '',
+            lat: '',
             heigth: ''
         } 
     }
@@ -17,11 +18,6 @@ export default class CesiumPosition extends Component {
         this.scene = this.viewer.scene;
         //得到当前三维场景的椭球体
         this.ellipsoid = this.scene.globe.ellipsoid;
-        this.entity = this.viewer.entities.add({
-            label: {
-                show: false
-            }
-        });
         this.longitudeString = null;
         this.latitudeString = null;
         this.height = null;
@@ -37,30 +33,27 @@ export default class CesiumPosition extends Component {
             this.latitudeString = CesiumMath.toDegrees(cartographic.latitude);
             //获取相机高度
             this.height = Math.ceil(this.viewer.camera.positionCartographic.height);
-            this.entity.position = this.cartesian;
-            this.entity.label.show = true;
             this.setState({
-                degree: ('东经E ' + this._transfromDegree(this.longitudeString) + ', 北纬N ' + this._transfromDegree(this.latitudeString)),
-                height: ("海拔" + this._transfromHeigth(this.height))
+                lon: this._transfromDegree(this.longitudeString),
+                lat: this._transfromDegree(this.latitudeString),
+                height: this._transfromHeigth(this.height)
             })
-            console.log(this._transfromHeigth(this.height))
-            this.entity.label.text = '(东经E ' + this._transfromDegree(this.longitudeString) + ', 北纬N ' + this._transfromDegree(this.latitudeString) + ",海拔" + this._transfromHeigth(this.height) + ')';
         } else {
-            this.entity.label.show = false;
         }
     }
     _wheel(wheelment) {
         this.height = Math.ceil(this.viewer.camera.positionCartographic.height);
-        this.entity.position = this.cartesian;
-        this.entity.label.show = true;
-        this.entity.label.text = '(' + this.longitudeString + ', ' + this.latitudeString + "," + this.height + ')';
-        console.log(this.entity.label.text)
+        this.setState({
+            lon: this._transfromDegree(this.longitudeString),
+            lat: this._transfromDegree(this.latitudeString),
+            height: this._transfromHeigth(this.height)
+        })
     }
     _transfromDegree(deg) {
         const degree = Math.trunc(deg)
         const minute = Math.trunc((deg - degree) * 60)
         const second = (((deg - degree) * 60 - minute) * 60).toFixed(2)
-        return `${degree}°${minute}'${second}`
+        return `${degree}°${minute}'${second}"`
     }
     _transfromHeigth(height) {
         if (height > 9999) {
@@ -69,13 +62,15 @@ export default class CesiumPosition extends Component {
         return `${height} m`
     }
     render() {
-        const { degree, heigth }  = this.state
+        const { lon, lat, height }  = this.state
         return (
-            <div>
+            <div className='position-msg'>
                 <ScreenSpaceEvent viewer={this.props.viewer} ScreenSpaceEventType={ScreenSpaceEventType.MOUSE_MOVE} handleAgru={this._mouseMove.bind(this)}/>
                 <ScreenSpaceEvent viewer={this.props.viewer} ScreenSpaceEventType={ScreenSpaceEventType.WHEEL} handleAgru={this._wheel.bind(this)}/>
-                <div className='degree' ref={degree => this.degree = degree}>{degree}</div>
-                <div className='height' ref={heigth => this.height = heigth}>{heigth}</div>
+                <div className='lon' ref={lon => this.lon = lon}>北纬N&nbsp;{lon}</div>
+                <div className='lat' ref={lat => this.lat = lat}>&nbsp;东经E&nbsp;{lat}</div>
+                <div className='height' ref={height => this.heigh = height}>
+                    &nbsp;海拔&nbsp;{height}</div>
             </div>
         )
     }
