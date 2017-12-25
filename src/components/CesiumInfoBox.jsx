@@ -33,6 +33,7 @@ export default class CesiumInfoBox extends Component {
 
             });
             this._positionPopUp(c)
+            this._show();
         }
         else {
             // removeHandler()
@@ -56,12 +57,11 @@ export default class CesiumInfoBox extends Component {
     _positionPopUp(c) {
         
         const style = this._getStyle(this.infobox)
-        const width = Number.parseFloat(style.width)
-        const height = Number.parseFloat(style.height)
+        const width = Number.parseFloat(style.width) || 280
+        const height = Number.parseFloat(style.height) || 60 
         var x = c.x - (width) / 2;
         var y = c.y - (height) - 50;
         this.infobox.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)'
-        this._show();
     }
     _getStyle(ele) {
         var style = null;
