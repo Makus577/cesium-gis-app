@@ -61,6 +61,7 @@ export default class CesiumZoom extends Component {
         }
 
         if (scene.mode == SceneMode.SCENE2D || scene.mode == SceneMode.COLUMBUS_VIEW) {
+            
             result = camera.worldToCameraCoordinatesPoint(result, result);
 
             if (inWorldCoordinates) {
@@ -85,7 +86,8 @@ export default class CesiumZoom extends Component {
             case SceneMode.MORPHING:
                 break;
             case SceneMode.SCENE2D:
-                camera.zoomIn(camera.positionCartographic.height * (1 - this.relativeAmount));
+                console.log(1 - relativeAmount)
+                camera.zoomIn(camera.positionCartographic.height * (1 - relativeAmount));
                 break;
             default:
                 var focus;

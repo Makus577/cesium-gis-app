@@ -8,7 +8,7 @@ export default class CesiumLeftClick extends Component {
     }
     _leftClick() {
         // 处理两个点的距离
-        const viewer = this.props.viewer
+        const { viewer } = this.props
         const position = []
         var handler = new ScreenSpaceEventHandler(viewer.canvas);
         handler.setInputAction((click) => {

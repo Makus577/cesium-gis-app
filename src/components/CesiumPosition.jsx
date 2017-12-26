@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ScreenSpaceEvent from '../cesium/ScreenSpaceEvent'
 import ScreenSpaceEventType from 'cesium/Source/Core/ScreenSpaceEventType'
 import CesiumMath from 'cesium/Source/Core/Math'
+import Ellipsoid from 'cesium/Source/Core/Ellipsoid'
+import Cartographic from 'cesium/Source/Core/Cartographic'
 import '../css/position.css'
 export default class CesiumPosition extends Component {
     constructor () {
@@ -24,7 +26,9 @@ export default class CesiumPosition extends Component {
         this.cartesian = null;
     }
     _mouseMove(movement) {
-        this.cartesian = this.viewer.camera.pickEllipsoid(movement.endPosition, this.ellipsoid);
+        // this.cartesian = this.viewer.camera.pickEllipsoid(movement.endPosition, this.ellipsoid)
+        var ray=this.viewer.camera.getPickRay(movement.endPosition);  
+           this.cartesian=this.viewer.scene.globe.pick(ray,this.viewer.scene);  
         if (this.cartesian) {
             //将笛卡尔坐标转换为地理坐标
             var cartographic = this.ellipsoid.cartesianToCartographic(this.cartesian);
@@ -32,7 +36,12 @@ export default class CesiumPosition extends Component {
             this.longitudeString = CesiumMath.toDegrees(cartographic.longitude);
             this.latitudeString = CesiumMath.toDegrees(cartographic.latitude);
             //获取相机高度
-            this.height = Math.ceil(this.viewer.camera.positionCartographic.height);
+            // this.height = Math.ceil(this.viewer.camera.positionCartographic.height);
+            //获取海拔s
+            console.log((cartographic))
+            // cartographic = new Cartographic(cartographic.longitude, cartographic.latitude); 
+            this.height =  cartographic.height
+            // this.height=this.viewer.scene.globe.getHeight(cartographic);
             this.setState({
                 lon: this._transfromDegree(this.longitudeString),
                 lat: this._transfromDegree(this.latitudeString),
@@ -42,12 +51,10 @@ export default class CesiumPosition extends Component {
         }
     }
     _wheel(wheelment) {
-        this.height = Math.ceil(this.viewer.camera.positionCartographic.height);
-        this.setState({
-            lon: this._transfromDegree(this.longitudeString),
-            lat: this._transfromDegree(this.latitudeString),
-            height: this._transfromHeigth(this.height)
-        })
+        // this.setState({
+        //     lon: this._transfromDegree(this.longitudeString),
+        //     lat: this._transfromDegree(this.latitudeString),
+        // })
     }
     _transfromDegree(deg) {
         const degree = Math.trunc(deg)

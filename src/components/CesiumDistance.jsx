@@ -3,18 +3,30 @@ import Cartesian3 from 'cesium/Source/Core/Cartesian3'
 import PolylinePipeline from 'cesium/Source/Core/PolylinePipeline'
 import Ellipsoid from 'cesium/Source/Core/Ellipsoid'
 import Color from 'cesium/Source/Core/Color'
-
+import Cartographic from 'cesium/Source/Core/Cartographic'
 import CesiumLeftClick from './CesiumLeftClick'
-
+import EllipsoidGeodesic from 'cesium/Source/Core/EllipsoidGeodesic'
 export default class CesiumDistance extends Component {
     componentDidMount() {
         
     }
     PToPDistance(disS, disE) {
+        
         const positions = Cartesian3.fromDegreesArray([
             ...disS,
             ...disE]);
+        // 第二种方法 start
+        // var startCartographic = Cartographic.fromDegrees(disS[0], disS[1]);
 
+        // var endCartographic = Cartographic.fromDegrees(disE[0], disE[1]);
+        
+        // /**根据经纬度计算出距离**/
+        // var geodesic =new EllipsoidGeodesic();
+        // geodesic.setEndPoints(startCartographic, endCartographic);
+        
+        // var distance=geodesic.surfaceDistance;
+        // console.log(distance) end
+        
         const surfacePositions = PolylinePipeline.generateArc({
             positions: positions
         });
@@ -33,7 +45,7 @@ export default class CesiumDistance extends Component {
         // console.log('Distance: ' + totalDistanceInKm + ' km');
     }
     handleleftClick(click) {
-        const viewer = this.props.viewer
+        const { viewer } = this.props
         var position = viewer.camera.pickEllipsoid(click.position);
         var cartographicPosition = Ellipsoid.WGS84.cartesianToCartographic(position);
         var y = cartographicPosition.latitude;
@@ -52,6 +64,7 @@ export default class CesiumDistance extends Component {
                 outlineWidth: 2
             }
         });
+        
         return [x, y]
     }
     calcDis(pos) {
@@ -59,7 +72,7 @@ export default class CesiumDistance extends Component {
         //     console.log(entity.position.getValue())
         // }
         const dis = this.PToPDistance(pos[0], pos[1])
-        console.log(dis)
+        console.log(dis + ' km')
 
     }
     render() {
