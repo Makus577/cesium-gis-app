@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../css/compass.css'
 import Camera from 'cesium/Source/Scene/Camera'
 import compass from '../imgs/compass.png'
+import compass_2x from '../imgs/compass@2x.png'
 export default class CesiumCompass extends Component {
     //如何实现监听事件
     componentDidMount() {

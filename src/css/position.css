@@ -1,8 +1,8 @@
 .position-msg {
     display: flex;
     position: absolute;
-        left: 172px;
-    bottom: 10px;
+    left: 200px;
+    bottom: 35px;
     z-index: 99;
     color: #fff;
 }

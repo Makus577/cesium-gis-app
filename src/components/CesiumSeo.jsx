@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../css/seo.css'
-import searchIcon from '../imgs/search.svg'
+import searchIcon from '../imgs/seo.png'
+
 export default class CesiumSeo extends Component {
     searchClick() {
         console.log(this.input.value)

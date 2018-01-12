@@ -12,6 +12,7 @@ import CesiumPosition from './components/CesiumPosition'
 import CesiumInfoBox from './components/CesiumInfoBox'
 import CesiumScale from './components/CesiumScale'
 import './css/components.css'
+import logo from './imgs/logo.png'
 export default class CesiumComponents extends Component {
     constructor() {
         super()
@@ -35,7 +36,7 @@ export default class CesiumComponents extends Component {
                 <div className='compass'>
                     <CesiumCompass viewer={this.props.viewer}/>
                 </div>
-                <div className={'sh-Tools ' + (!isShow ? '' :'transform')}>
+                <div className='sh-Tools'>
                     <div className='cesium-2d'>
                         <Cesium2D viewer={this.props.viewer}/>
                     </div>
@@ -50,6 +51,9 @@ export default class CesiumComponents extends Component {
                 </div>
                 <div className={'hot-point ' + (isShow ? '' : 'hide')}>
                     <CesiumHotPoint />
+                </div>
+                <div className='logo'>
+                    <img src={logo} alt=""/>
                 </div>
                 <div>
                     <CesiumPosition viewer={this.props.viewer}/>

@@ -42,17 +42,17 @@ export default class CesiumInfoBox extends Component {
     }
     _test() {
         const viewer = this.props.viewer
-        var citizensBankPark = viewer.entities.add({
-            position: Cartesian3.fromDegrees(-75.166493, 39.9060534),
-            //广告牌
-            billboard: {
-                image: icon,
-                width: 64,
-                height: 64
-            },
+        // var citizensBankPark = viewer.entities.add({
+        //     position: Cartesian3.fromDegrees(-75.166493, 39.9060534),
+        //     //广告牌
+        //     billboard: {
+        //         image: icon,
+        //         width: 64,
+        //         height: 64
+        //     },
             
-        });
-        viewer.zoomTo(citizensBankPark);
+        // });
+        // viewer.zoomTo(citizensBankPark);
     }
     _positionPopUp(c) {
         

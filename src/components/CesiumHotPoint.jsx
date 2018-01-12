@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import '../css/hotPoint.css'
 import icon1 from '../imgs/1.png'
-import icon2 from '../imgs/2.png'
-import icon3 from '../imgs/3.png'
-import next from '../imgs/next.png'
-import last from '../imgs/last.png'
-const arr = [icon1, icon2, icon3]
+import next from '../imgs/right.png'
+import last from '../imgs/left.png'
+// const arr = [icon1, icon2, icon3]
 export default class CesiumHotPoint extends Component {
     imgPointLast() {
         let marginLeft = this.imgs.style.marginLeft
@@ -17,7 +15,9 @@ export default class CesiumHotPoint extends Component {
         if (marginLeft >= 0) {
             return
         }
-        marginLeft += 180
+        console.log(marginLeft)
+        marginLeft += 110
+        console.log(marginLeft)
         this.imgs.style.marginLeft = marginLeft + 'px';
     }
     imgPointNext() {
@@ -30,11 +30,11 @@ export default class CesiumHotPoint extends Component {
         if (marginLeft <= -180*2) {
             return
         }
-        marginLeft -= 180
+        marginLeft -= 110
         this.imgs.style.marginLeft = marginLeft + 'px';
     }
     render() {
-        const imgPoints = [1, 2, 3, 4,5,6,7,8,9,10,11,12]
+        const imgPoints = [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
         return (
             <div className='hot-points'>
                 <div className='gallery'>
@@ -46,7 +46,8 @@ export default class CesiumHotPoint extends Component {
                                 imgPoints.map((imgPoint, index) => {
                                     return (
                                         <div className='point-img' key={index}>
-                                            <img src={arr[(index) % 3 ]} alt=""/>
+                                            <img src={icon1} alt=""/>
+                                            <div className='img-text'>故宫{index}</div>
                                         </div>
                                     )
                                 })

@@ -1,17 +1,17 @@
 .zoomInOut {
-    width: 50px;
+    width: 32px;
 
 }
 .zoomIn, .zoomOut {
     /* border-bottom: 1px solid #000000; */
-    height: 50px;
+    height: 32px;
     /* background-color: #ffffff; */
-    background-image: url('../imgs/zoom.svg');
+    background-image: url('../imgs/zooms.png');
     background-repeat: no-repeat;
 }
 .zoomIn {
     background-position: 0 0;
 }
 .zoomOut {
-    background-position: 0 32.33%;
+    background-position: 0 33.33%;
 }

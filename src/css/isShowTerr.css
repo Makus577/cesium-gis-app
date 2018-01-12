@@ -1,22 +1,49 @@
 .showHotP {
     display: flex;
+    position: relative;
     /* border: 1px solid #000000;
     background-color: #ffffff;
     border-radius: 0 0 5px 5px; */
 
 }
 .isShow {
-    width: 50px;
-    height: 50px;
-    background-image: url('../imgs/zoom.png');
+    width: 32px;
+    height: 32px;
+    background-image: url('../imgs/arrow.png');
     background-repeat: no-repeat;
-    background-position: 0 99%;
+    background-position: 50% 50%;
+    background-color: #fff;
+   
+}
+.arrow {
+    transform: rotate(0);
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid;
+}
+.arrow-transfrom {
+    transform: rotate(180deg); 
+    border-radius: 5px 5px  0 0 ;
+    border-bottom: 1px solid;
 }
 .showText {
     position: absolute;
-    right: 0;
-    bottom: -5px;
+    right: 29px;
+    top: 0px;
     /* border-radius: 5px 0 0 0; */
+    background-color: #fff;
+    width: 128px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 5px 0 0 5px;
+    font-family: SimSun;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    color: #333333;
+  
 }
 .top-left-radius{
     /* border-top-left-radius: 5px; */

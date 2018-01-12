@@ -1,4 +1,4 @@
-.tools-seo, .compass, .sh-Tools, .hot-point {
+.tools-seo, .compass, .sh-Tools {
     z-index: 99;
 }
 .tools-seo {
@@ -14,7 +14,7 @@
 }
 .sh-Tools {
     position: absolute;
-    right: 25px;
+    right: 22px;
     bottom: 0px;
 }
 .transform {
@@ -23,28 +23,37 @@
 .cesium-2d {
     position: absolute;
     right: 0;
-    bottom: 252px;
+    bottom: 226px;
 }
 .zoom-terrain {
     position: absolute;
     right: 0;
-    bottom: 91px;
+    bottom: 120px;
     
 }
 .show-hot-point {
     position: absolute;
     right: 0;
-    bottom: 41px;
+    bottom: 88px;
     /* border-radius: 5px 5px 0 0; */
 }
 .hot-point {
     position: absolute;
     bottom: 25px;
-    left: 15px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 22px);
+    margin: 0 auto;
+    z-index: 100;
 }
 .show {
     display: block;
 }
 .hide {
     display: none;
+}
+.logo {
+    position: absolute;
+    left: 55px;
+    bottom: 90px;
 }
